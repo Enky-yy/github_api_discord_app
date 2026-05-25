@@ -36,7 +36,7 @@ async def on_ready():
 
 async def load_ext():
     await bot.load_extension('cogs.github')
-    await bot.load_extension('managements.')
+    await bot.load_extension('managements.*')
 
 secret = ""
 

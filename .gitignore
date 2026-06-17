@@ -1,6 +1,11 @@
 .env
+.vscode
 **vscode**
 **pycache**/
 *.db
 .venv/
 .vscode/settings.json
+.vscode/
+.vscode
+.env/
+

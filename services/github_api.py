@@ -1,7 +1,12 @@
 import aiohttp
 from services.caching import get_cache, set_cache
+from dotenv import load_dotenv
+import os
 
-GITHUB_TOKEN = ""
+load_dotenv()
+
+
+GITHUB_TOKEN =  os.getenv("GITHUB_TOKEN")
 
 HEADERS = {
     "Authorization" : "Bearer {}".format(GITHUB_TOKEN)

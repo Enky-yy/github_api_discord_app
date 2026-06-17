@@ -2,7 +2,11 @@ from discord.ext import commands
 from discord import app_commands
 import discord
 import asyncio
+<<<<<<< HEAD
 from database import warn_user , get_warnings
+=======
+from managements.database import warn_user , get_warnings
+>>>>>>> d792fc5 (On branch main)
 
 class Moderation(commands.Cog):
     def __init__(self,bot):

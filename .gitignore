@@ -1,0 +1,6 @@
+.env
+**vscode**
+**pycache**/
+*.db
+.venv/
+.vscode/settings.json

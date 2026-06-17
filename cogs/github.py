@@ -29,7 +29,7 @@ query($login: String!) {
 
 
 class githubCog(commands.Cog):
-    def __int__(self, bot):
+    def __init__(self, bot):
         self.bot =bot
 
     @app_commands.command(name="github", description="Get Github Stats")

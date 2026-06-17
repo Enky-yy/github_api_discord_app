@@ -3,6 +3,8 @@ from discord import app_commands
 from discord.ext import commands, tasks
 import asyncio
 import itertools
+from dotenv import load_dotenv
+import os
 
 intents = discord.Intents.default()
 intents.message_content=True
@@ -36,9 +38,23 @@ async def on_ready():
 
 async def load_ext():
     await bot.load_extension('cogs.github')
+<<<<<<< HEAD
     await bot.load_extension('managements.*')
+=======
+    await bot.load_extension('managements.auto_embed')
+    await bot.load_extension('managements.automod')
+    await bot.load_extension('managements.channels')
+    await bot.load_extension('managements.clear_msg')
+    # await bot.load_extension('managements.database')
+    await bot.load_extension('managements.embedded')
+    await bot.load_extension('managements.loggingg')
+    await bot.load_extension('managements.join_leave')
+    await bot.load_extension('managements.moderation')
+>>>>>>> d792fc5 (On branch main)
 
-secret = ""
+
+load_dotenv()
+secret = os.getenv("MY_TOKEN")
 
 async def main():
     async with bot:

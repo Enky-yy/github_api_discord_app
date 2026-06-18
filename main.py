@@ -38,9 +38,6 @@ async def on_ready():
 
 async def load_ext():
     await bot.load_extension('cogs.github')
-<<<<<<< HEAD
-    await bot.load_extension('managements.*')
-=======
     await bot.load_extension('managements.auto_embed')
     await bot.load_extension('managements.automod')
     await bot.load_extension('managements.channels')
@@ -50,7 +47,6 @@ async def load_ext():
     await bot.load_extension('managements.loggingg')
     await bot.load_extension('managements.join_leave')
     await bot.load_extension('managements.moderation')
->>>>>>> d792fc5 (On branch main)
 
 
 load_dotenv()

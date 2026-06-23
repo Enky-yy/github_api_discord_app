@@ -6,44 +6,29 @@ class Channels(commands.Cog):
     def __init__(self,bot):
         self.bot=bot
 
-<<<<<<< HEAD
-    @app_commands.command(name='Create Text')
-=======
     @app_commands.command(name='create_text')
->>>>>>> d792fc5 (On branch main)
     @app_commands.checks.has_permissions(manage_channels=True)
     async def create_text(self,interaction:discord.Interaction,name:str):
         guild = interaction.guild
         await guild.create_text_channel(name=name)
         await interaction.response.send_message(f"Created Text channel: **{name}**")
 
-<<<<<<< HEAD
-    @app_commands.command(name='Create Voice')
-=======
     @app_commands.command(name='create_voice')
->>>>>>> d792fc5 (On branch main)
     @app_commands.checks.has_permissions(manage_channels=True)
     async def create_voice(self,interaction:discord.Interaction,name:str):
         guild = interaction.guild
         await guild.create_voice_channel(name=name)
         await interaction.response.send_message(f"Created Voice channel: **{name}**")
 
-<<<<<<< HEAD
-    @app_commands.command(name='Delete Text')
-=======
     @app_commands.command(name='delete_text')
->>>>>>> d792fc5 (On branch main)
     @app_commands.checks.has_permissions(manage_channels=True)
     async def delete_text(self,interaction:discord.Interaction,text:discord.TextChannel):
         
         await text.delete(text)
         await interaction.response.send_message(f"Created channel: **{text}**")
 
-<<<<<<< HEAD
-    @app_commands.command(name="Delete Voice", description="Delete your current voice channel")
-=======
+
     @app_commands.command(name="delete_voice", description="Delete your current voice channel")
->>>>>>> d792fc5 (On branch main)
     @app_commands.checks.has_permissions(manage_channels=True)
     async def delete_voice(self, interaction: discord.Interaction ,vc_name:discord.VoiceChannel):
         if vc_name: True 

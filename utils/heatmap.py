@@ -1,4 +1,4 @@
-import matplotlib.pyplot as plt
+
 import numpy as np
 
 def get_color(count):
@@ -15,6 +15,7 @@ def get_color(count):
 
 
 def generate_heatmap(weeks, filename="heatmap.png"):
+    import matplotlib.pyplot as plt
     grid = []
 
     for week in weeks:

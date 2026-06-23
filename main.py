@@ -6,6 +6,13 @@ import itertools
 from dotenv import load_dotenv
 import os
 
+
+from flask import Flask
+import threading
+import os
+
+app = Flask(__name__)
+
 intents = discord.Intents.default()
 intents.message_content=True
 intents.members=True
@@ -51,6 +58,19 @@ async def load_ext():
 
 load_dotenv()
 secret = os.getenv("MY_TOKEN")
+
+@app.route("/")
+def home():
+    return "Bot online"
+
+def run_web():
+    app.run(
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 10000))
+    )
+
+threading.Thread(target=run_web, daemon=True).start()
+
 
 async def main():
     async with bot:

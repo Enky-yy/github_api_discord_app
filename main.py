@@ -28,7 +28,7 @@ statuses = itertools.cycle([
 @tasks.loop(seconds=10)
 async def change_status():
     await bot.change_presence(
-        status=statuses,
+        status=discord.Status.online,
         activity=discord.Activity(
             type = discord.ActivityType.watching,
             name = next(statuses)
@@ -39,7 +39,8 @@ async def change_status():
 @bot.event
 async def on_ready():
     print("logged in as {0} , yehehe".format(bot.user))
-    await change_status()
+    if not change_status.is_running():
+        change_status.start()
     await bot.tree.sync()
     print("Slash Commands activated and synced")
 
@@ -49,7 +50,6 @@ async def load_ext():
     await bot.load_extension('managements.automod')
     await bot.load_extension('managements.channels')
     await bot.load_extension('managements.clear_msg')
-    # await bot.load_extension('managements.database')
     await bot.load_extension('managements.embedded')
     await bot.load_extension('managements.loggingg')
     await bot.load_extension('managements.join_leave')

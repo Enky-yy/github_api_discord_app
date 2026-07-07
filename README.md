@@ -102,7 +102,7 @@ discord-bot/
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Enky-yy/github_api_discord_app.git
 cd discord-bot
 ```
 
